@@ -1,2 +1,2 @@
 # HOTEL-MANAGEMENT-SYSTEM-
-Hello
+printf("hello world")
