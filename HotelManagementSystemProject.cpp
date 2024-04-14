@@ -98,3 +98,45 @@ void Room::displayRoom(Room tempRoom)
   cout<<\"nType size(B/S)"<<tempRoom.stype;
   cout<<"\n Rent:"<<tempRoom.rent;
 }
+void Room::searchRoom(int rno)
+{
+int i,found=0;
+for(i=0;i<count;i++)
+{
+if(rooms[i].roomNumber==rno)
+{
+found=1;
+break;
+}
+}
+if(found==1)
+{
+cout<<"\nRoom Details :\n";
+if(rooms[i].status==1)
+{
+cout<<"\n  Room is Reserved!";
+}
+else
+{
+cout<<"\n  Room is available!";
+cout<<"\n----------------------------------------------";
+}
+displayRoom(rooms[i]);
+getch();
+}
+else
+{
+cout<<"\n  Room not found!";
+getch();
+}
+}
+
+void Room::displayRoom(Room tempRoom)
+{
+cout<<"\n  Room Number                   : "<<tempRoom.roomNumber;
+cout<<"\n  AC/Non-AC (A/N)               : "<<tempRoom.ac;
+cout<<"\n  Comfort SUITE/NON-SUITE (S/N) : "<<tempRoom.type;
+cout<<"\n  Size BIG/SMALL (B/S)          : "<<tempRoom.stype;
+cout<<"\n  Rent                          : "<<tempRoom.rent;
+cout<<"\n-----------------------------------------------";
+}   
