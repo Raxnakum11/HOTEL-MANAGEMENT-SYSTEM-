@@ -57,3 +57,44 @@ cout<<"\n  Room Added Successfully!";
 getch();
 return room;
 }
+
+void Room::searchRoom(int rno)
+{
+  int i,found=0;
+  for(i=0; i<count; i++)
+    {
+      if(rooms[i].roomNumber==rno)
+      {
+        found=1;
+        break;
+      }
+    }
+  if(found==1)
+  {
+    cout<<"Room Details\n";
+    if(rooms[i].status==1)
+    {
+      cout<<\n Room is reserved";
+    }
+    else
+    {
+      cout<<"\n Room is available";
+    }
+    displayRoom(rooms[i]);
+    getch();
+  }
+  else
+  {
+    cout<<"\n Room not found";
+    getch();
+  }
+}
+
+void Room::displayRoom(Room tempRoom)
+{
+  cout<<"\n Room Number:\t"<<tempRoom.roomNumber;
+  cout<<"\n Type AC/Non-AC(A/N)"<<tempRoom.ac;
+  cout<<"\n Type Comfort(S/N)"<<tempRoom.type;
+  cout<<\"nType size(B/S)"<<tempRoom.stype;
+  cout<<"\n Rent:"<<tempRoom.rent;
+}
