@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string.h>
+#include<iomanip>
 #define max 100
 using namespace std;
 
@@ -118,7 +119,7 @@ cout<<"\n  Room is Reserved!";
 }
 else
 {
-cout<<"\n  Room is available!";
+cout<<"Room is available!"<<endl;
 cout<<"\n----------------------------------------------";
 }
 displayRoom(rooms[i]);
@@ -126,17 +127,46 @@ getch();
 }
 else
 {
-cout<<"\n  Room not found!";
+cout<<"Room not found!"<<endl;
 getch();
 }
 }
 
 void Room::displayRoom(Room tempRoom)
 {
-cout<<"\n  Room Number                   : "<<tempRoom.roomNumber;
-cout<<"\n  AC/Non-AC (A/N)               : "<<tempRoom.ac;
-cout<<"\n  Comfort SUITE/NON-SUITE (S/N) : "<<tempRoom.type;
-cout<<"\n  Size BIG/SMALL (B/S)          : "<<tempRoom.stype;
-cout<<"\n  Rent                          : "<<tempRoom.rent;
-cout<<"\n-----------------------------------------------";
+cout<<left<<setw(40)<<"Room Number"<<tempRoom.roomNumber<<endl;
+cout<<left<<setw(40)<<"AC/Non-AC (A/N)"<<tempRoom.ac<<endl;
+cout<<left<<setw(40)<<"\nComfort SUITE/NON-SUITE (S/N)"<<tempRoom.type<<endl;
+cout<<left<<setw(40)<<"\nSize BIG/SMALL (B/S)"<<tempRoom.stype<<endl;
+cout<<left<<setw(40)<<"\nRent"<<tempRoom.rent<<endl;
 }   
+
+class HotelMgnt:protected Room
+{
+public:
+void checkIn();
+void getAvailRoom();
+void searchCustomer(char *);
+void checkOut(int);
+void guestSummaryReport();
+};
+
+void HotelMgnt::guestSummaryReport()
+{
+  if(count==0)
+  {
+    cout<<"\n No guset in Hotel!";
+  }
+  for(int i=0; i<count; I++)
+    {
+      if(rooms[i].status==1)
+      {
+        cout<<left<<setw(20)<<"Customer First Name "<<rooms[i].cust.name<<endl;
+        cout<<left<<setw(20)<<"Room Number "<<rooms[i].roomNumber<<endl;
+        cout<<left<<setw(20)<<"Address (only city) "<<rooms[i].cust.address<<endl;
+        cout<<left<<setw(20)<<"Phone "<<rooms[i].cust.phone<<endl;
+        cout<<"\n---------------------------------------";	
+      }
+    }
+getch();
+}
