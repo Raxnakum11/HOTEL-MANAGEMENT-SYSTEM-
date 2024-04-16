@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string.h>
+#include<conio.h>
 #include<iomanip>
 #define max 100
 using namespace std;
@@ -75,7 +76,7 @@ void Room::searchRoom(int rno)
     cout<<"Room Details :\n";
     if(rooms[i].status==1)
     {
-      cout<<\n Room is reserved.";
+      cout<<"\n Room is reserved.";
     }
     else
     {
@@ -93,12 +94,12 @@ void Room::searchRoom(int rno)
 }
 void Room::displayRoom(Room tempRoom)
 {
-cout<<left<<setw(40)<<"\nRoom Number                   :"<<tempRoom.roomNumber<<endl;
-cout<<left<<setw(40)<<"\nAC/Non-AC (A/N)               :"<<tempRoom.ac<<endl;
-cout<<left<<setw(40)<<"\nComfort SUITE/NON-SUITE (S/N) :"<<tempRoom.type<<endl;
-cout<<left<<setw(40)<<"\nSize BIG/SMALL (B/S)          :"<<tempRoom.stype<<endl;
-cout<<left<<setw(40)<<"\nRent                          :"<<tempRoom.rent<<endl;
-cout<<"\n---------------------------------";
+cout<<left<<setw(38)<<"\nRoom Number"<<":  "<<tempRoom.roomNumber<<endl;
+cout<<left<<setw(38)<<"\nAC/Non-AC (A/N)"<<":  "<<tempRoom.ac<<endl;
+cout<<left<<setw(38)<<"\nComfort SUITE/NON-SUITE (S/N)"<<":  "<<tempRoom.type<<endl;
+cout<<left<<setw(38)<<"\nSize BIG/SMALL (B/S)"<<":  "<<tempRoom.stype<<endl;
+cout<<left<<setw(38)<<"\nRent"<<":  "<<tempRoom.rent<<endl;
+cout<<"\n-------------------------------------------------";
 }   
 
 class HotelMgnt:protected Room
@@ -117,7 +118,7 @@ void HotelMgnt::guestSummaryReport()
   {
     cout<<"\n No guest in Hotel!";
   }
-  for(int i=0; i<count; I++)
+  for(int i=0; i<count; i++)
     {
       if(rooms[i].status==1)
       {
@@ -156,4 +157,5 @@ cout<<"\n  Room is already Booked.";
 getch();
 return;
 }
+
 
