@@ -205,5 +205,26 @@ getch();
 }
 }
 
+void HotelMgnt::searchCustomer(char *pname)
+{
+int i,found=0;
+for(i=0;i<count;i++)
+{
+if(rooms[i].status==1 && stricmp(rooms[i].cust.name,pname)==0)
+{
+cout<<"\n  Customer Name: "<<rooms[i].cust.name;
+cout<<"\n  Room Number: "<<rooms[i].roomNumber;
+
+cout<<"\n\n  Press enter for next record";
+found=1;
+getch();
+}
+}
+if(found==0)
+{
+cout<<"\n  Person not found.";
+getch();
+}
+}
 
 
