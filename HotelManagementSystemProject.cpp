@@ -259,3 +259,18 @@ rooms[i].status=0;
 }
 getch();
 }
+//managing rooms (adding and searching available rooms)
+void manageRooms()
+{
+class Room room;
+int opt,rno,i,flag=0;
+char ch;
+do
+{
+system("cls");
+cout<<"\n  ------- Manage Rooms --------";
+cout<<"\n  1. Add Room";
+cout<<"\n  2. Search Room";
+cout<<"\n  3. Back to Main Menu";
+cout<<"\n\n  Enter Option: ";
+cin>>opt;
