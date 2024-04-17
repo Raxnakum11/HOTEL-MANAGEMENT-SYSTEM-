@@ -228,3 +228,34 @@ getch();
 }
 
 
+void HotelMgnt::checkOut(int roomNum)
+{
+int i,found=0,days,rno;
+float billAmount=0;
+for(i=0;i<count;i++)
+{
+if(rooms[i].status==1 && rooms[i].roomNumber==roomNum)
+{
+found=1;
+break;
+}
+}
+if(found==1)
+{
+cout<<"\nEnter Number of Days:\t";
+cin>>days;
+billAmount=days * rooms[i].rent;
+
+cout<<"\n\t  --------- CheckOut Details ---------\n";
+cout<<"\n  Customer Name : "<<rooms[i].cust.name;
+cout<<"\n  Room Number : "<<rooms[i].roomNumber;
+cout<<"\n  Address : "<<rooms[i].cust.address;
+cout<<"\n  Phone : "<<rooms[i].cust.phone;
+cout<<"\n  Total Amount Due : "<<billAmount<<" /";
+cout<<"\n  Advance Paid: "<<rooms[i].cust.payment_advance<<" /";
+cout<<"\n  *** Total Payable: "<<billAmount-rooms[i].cust.payment_advance<<"/ only";
+
+rooms[i].status=0;
+}
+getch();
+}
