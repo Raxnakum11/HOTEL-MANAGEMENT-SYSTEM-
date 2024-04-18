@@ -160,14 +160,17 @@ return;
 cout<<"\n  Enter booking id: ";
 cin>>rooms[i].cust.booking_id;
 
-cout<<"\n  Enter Customer Name (First Name): ";
-cin>>rooms[i].cust.name;
+cout<<"\n  Enter Customer Name : ";
+cin.ignore();
+cin.getline(rooms[i].cust.name,100);
 
 cout<<"\n  Enter Address (only city): ";
-cin>>rooms[i].cust.address;
-
+//cin>>rooms[i].cust.address;
+cin.ignore();
+cin.getline(rooms[i].cust.address,100);
+  
 cout<<"\n  Enter Phone: ";
-cin>>rooms[i].cust.phone;
+cin>>setw(10)>>rooms[i].cust.phone;
 
 cout<<"\n  Enter From Date: ";
 cin>>rooms[i].cust.from_date;
@@ -200,11 +203,11 @@ getch();
 }
 if(found==0)
 {
-cout<<"\n  All rooms are reserved";
+cout<<"\n  All rooms are reserved.";
 getch();
 }
 }
-
+ 
 void HotelMgnt::searchCustomer(char *pname)
 {
 int i,found=0;
@@ -227,7 +230,7 @@ getch();
 }
 }
 
-
+//CHECKOUT FROM HOTELS
 void HotelMgnt::checkOut(int roomNum)
 {
 int i,found=0,days,rno;
@@ -317,10 +320,89 @@ break;
 }while(opt!=3);
 }
 using namespace std;
+
+// MAIN FUNCTION
 int main()
 {
 class HotelMgnt hm;
 int i,j,opt,rno;
 char ch;
 char pname[100];
+//system("cls");
+do
+{
 system("cls");
+cout<<"  ----------- Hotel Management -------------\n";
+cout<<"\n  1. Manage Rooms";
+cout<<"\n  2. Check-In Room";
+cout<<"\n  3. Available Rooms";
+cout<<"\n  4. Search Customer";
+cout<<"\n  5. Check-Out Room";
+cout<<"\n  6. Guest Summary Report";
+cout<<"\n  7. Exit";
+cout<<"\n\n  Enter Option: ";
+cin>>opt;
+switch(opt)
+{
+case 1:
+manageRooms();
+break;
+case 2:
+if(count==0)
+{
+cout<<"\n  Rooms data is not available.\nPlease add the rooms first.";
+getch();
+}
+else
+hm.checkIn();
+break;
+case 3:
+if(count==0)
+{
+cout<<"\n  Rooms data is not available.\nPlease add the rooms first.";
+getch();
+}
+else
+hm.getAvailRoom();
+break;
+case 4:
+if(count==0)
+{
+cout<<"\n  Rooms are not available.\nPlease add the rooms first.";
+getch();
+}
+else
+{
+cout<<"  Enter Customer Name: ";
+cin>>pname;
+hm.searchCustomer(pname);
+}
+break;
+case 5:
+if(count==0)
+{
+cout<<"\n  Rooms are not available.\nPlease add the rooms first.";
+getch();
+}
+else
+{
+cout<<"  Enter Room Number : ";
+cin>>rno;
+hm.checkOut(rno);
+}
+break;
+case 6:
+hm.guestSummaryReport();	
+break;
+case 7:
+cout<<"\n  THANK YOU! FOR USING SOFTWARE";
+break;
+default:
+cout<<"\n  Please Enter correct option";
+break;
+}
+}while(opt!=7);
+
+getch();
+}
+
