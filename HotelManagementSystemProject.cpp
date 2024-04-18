@@ -274,3 +274,53 @@ cout<<"\n  2. Search Room";
 cout<<"\n  3. Back to Main Menu";
 cout<<"\n\n  Enter Option: ";
 cin>>opt;
+
+
+//switch statement
+switch(opt)
+{
+case 1:
+cout<<"\n  Enter Room Number: ";
+cin>>rno;
+i=0;
+for(i=0;i<count;i++)
+{
+if(rooms[i].roomNumber==rno)
+{
+flag=1;
+}
+}
+if(flag==1)
+{
+cout<<"\n  Room Number is Present.\nPlease enter unique Number";
+flag=0;
+getch();
+}
+else
+{
+rooms[count]=room.addRoom(rno);
+count++;
+}
+break;
+case 2:
+cout<<"\n  Enter room number: ";
+cin>>rno;
+room.searchRoom(rno);
+break;
+case 3:
+//nothing to do
+break;
+default:
+cout<<"\n  Please Enter correct option";
+break;
+}
+}while(opt!=3);
+}
+using namespace std;
+int main()
+{
+class HotelMgnt hm;
+int i,j,opt,rno;
+char ch;
+char pname[100];
+system("cls");
