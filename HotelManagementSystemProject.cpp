@@ -295,7 +295,7 @@ flag=1;
 }
 if(flag==1)
 {
-cout<<"\n  Room Number is Present.\nPlease enter unique Number";
+     cout << "\nRoom Number is Present!!!!\nPlease Enter Unique Number..";
 flag=0;
 getch();
 }
@@ -324,26 +324,26 @@ using namespace std;
 // MAIN FUNCTION
 int main()
 {
-class HotelMgnt hm;
-int i,j,opt,rno;
-char ch;
-char pname[100];
-//system("cls");
-do
-{
-system("cls");
-cout<<"  ----------- Hotel Management -------------\n";
-cout<<"\n  1. Manage Rooms";
-cout<<"\n  2. Check-In Room";
-cout<<"\n  3. Available Rooms";
-cout<<"\n  4. Search Customer";
-cout<<"\n  5. Check-Out Room";
-cout<<"\n  6. Guest Summary Report";
-cout<<"\n  7. Exit";
-cout<<"\n\n  Enter Option: ";
-cin>>opt;
-switch(opt)
-{
+  class HotelMgnt hm;
+  int i,j,opt,rno;
+  char ch;
+  char pname[100];
+  //system("cls");
+ do
+ {
+ system("cls");
+ cout<<"  ----------- Hotel Management -------------\n";
+ cout<<"\n  1. Manage Rooms";
+ cout<<"\n  2. Check-In Room";
+ cout<<"\n  3. Available Rooms";
+ cout<<"\n  4. Search Customer";
+ cout<<"\n  5. Check-Out Room";
+ cout<<"\n  6. Guest Summary Report";
+ cout<<"\n  7. Exit";
+ cout<<"\n\n  Enter Option: ";
+ cin>>opt;
+ switch(opt)
+ {
 case 1:
 manageRooms();
 break;
@@ -401,8 +401,8 @@ default:
 cout<<"\n  Please Enter correct option";
 break;
 }
-}while(opt!=7);
+ }while(opt!=7);
 
-getch();
+  getch();
 }
 
