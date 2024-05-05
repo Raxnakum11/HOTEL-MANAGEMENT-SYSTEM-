@@ -47,10 +47,31 @@ class Room room;
 room.roomNumber=rno;
 cout<<"\n  Type AC/Non-AC (A/N) : ";
 cin>>room.ac;
+check1:
+if(room.ac!='A' &&room.ac!= 'a' &room.ac!= 'N'&&room.ac!= 'n')
+{
+    cout<<"You entered wrong choice,\n reenter type of room"<<endl;
+    cin>>room.ac;
+    goto check1;
+}
 cout<<"\n  Type Comfort (S/N) : ";
 cin>>room.type;
-cout<<"\n  Type Size (B/S) : ";
+check2:
+if(room.type!='S'&&room.type!= 's'&&room.type!= 'N'&&room.type!= 'n')
+{
+    cout<<"You entered wrong choice,\n reenter comfort type of room"<<endl;
+    cin>>room.type;
+    goto check2;
+}
+cout<<"\n  Type Size Big/small(B/S) : ";
 cin>>room.stype;
+check3:
+if(room.stype!='B' && room.stype!='b' && room.stype!='S' && room.stype!= 's')
+{
+    cout<<"You entered wrong choice,\n reenter size of room"<<endl;
+    cin>>room.stype;
+    goto check3;
+}
 cout<<"\n  Daily Rent : ";
 cin>>room.rent;
 room.status=0;
@@ -59,6 +80,7 @@ cout<<"\n  Room Added Successfully!";
 getch();
 return room;
 }
+
 
 void Room::searchRoom(int rno)
 {
@@ -215,9 +237,12 @@ for(i=0;i<count;i++)
 {
 if(rooms[i].status==1 && stricmp(rooms[i].cust.name,pname)==0)
 {
-cout<<"\n  Customer Name: "<<rooms[i].cust.name;
-cout<<"\n  Room Number: "<<rooms[i].roomNumber;
-
+cout<<left<<setw(20)<<"\nCustomer Name        :"<<rooms[i].cust.name<<endl;
+cout<<left<<setw(20)<<"\nRoom Number          :"<<rooms[i].roomNumber<<endl;
+cout<<left<<setw(20)<<"\nAddress (only city)  :"<<rooms[i].cust.address<<endl;
+cout<<left<<setw(20)<<"\nPhone No.            :"<<rooms[i].cust.phone<<endl;
+cout<<left<<setw(20)<<"\nEnter Check-In Date  :"<<rooms[i].cust.from_date<<endl;
+  
 cout<<"\n\n  Press enter for next record";
 found=1;
 getch();
