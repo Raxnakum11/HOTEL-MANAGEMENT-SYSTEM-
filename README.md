@@ -5,10 +5,10 @@
   
   ## Features:
   
-   Room Management:     Allows adding, removing, and updating room details including room type, availability, and price.
+  **Room Management:**     Allows adding, removing, and updating room details including room type, availability, and price.
    
-   Guest Management:    Facilitates guest check-in and check-out, along with storing guest information.
+   **Guest Management:**    Facilitates guest check-in and check-out, along with storing guest information.
    
-   Booking Management:  Enables booking rooms for guests, checking room availability, and managing reservations.
+  **Booking Management:**  Enables booking rooms for guests, checking room availability, and managing reservations.
    
-   Billing:Calculates and generates bills for guests based on their stay duration and additional services availed.
+   **Billing:**  Calculates and generates bills for guests based on their stay duration and additional services availed.
