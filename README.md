@@ -1,4 +1,5 @@
-#Hotel-Management-System:
+#<sup>Hotel-Management-System:</sup>
+
        This project is a simple hotel management system implemented in C++. It provides basic functionalities for managing hotel operations such as booking rooms, checking in/out guests, and managing room availability.
 
   Features
