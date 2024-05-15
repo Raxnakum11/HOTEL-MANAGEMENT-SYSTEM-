@@ -2,7 +2,8 @@
 
   This project is a simple hotel management system implemented in C++. It provides basic functionalities for managing hotel operations such as booking rooms, checking in/out guests, and managing room availability.
 
-  Features:
+  
+  ## Features:
   
    Room Management:     Allows adding, removing, and updating room details including room type, availability, and price.
    
